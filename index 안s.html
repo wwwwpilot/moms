@@ -1,0 +1,2381 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>안s 사진 AI 스튜디오 | 출장 사진 · 인공지능 활용 지도</title>
+    <meta
+      name="description"
+      content="출장 사진 및 인공지능 활용 지도를 통해 당신의 공간에 혁신을 일으키는 안s 사진 AI 스튜디오 공식 기업 홈페이지입니다."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600&family=Noto+Serif+KR:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg-canvas: #efe7da;
+        --bg-soft: #f6f1e8;
+        --bg-card: #ffffff;
+        --bg-footer: #e5dac8;
+        --bg-header: rgba(138, 114, 90, 0.95);
+        --bg-drawer: #7d664e;
+        --bg-input: #faf7f2;
+        --border-stone: #d8ccba;
+        --border-soft: #efe7da;
+        --border-subtle: #e5dac8;
+        --ink-primary: #231f1b;
+        --ink-secondary: #5a5147;
+        --ink-placeholder: #8a7e70;
+        --navy: #1b2a4a;
+        --navy-hover: #13203a;
+        --danger: #8c2d19;
+        --shadow-card: 0 8px 24px rgba(35, 31, 27, 0.08);
+        --shadow-card-hover: 0 18px 36px rgba(35, 31, 27, 0.14);
+        --font-serif: "Noto Serif KR", Georgia, serif;
+        --font-sans: "IBM Plex Sans KR", -apple-system, BlinkMacSystemFont, sans-serif;
+      }
+
+      html.dark {
+        --bg-canvas: #14110e;
+        --bg-soft: #1c1814;
+        --bg-card: #1e1a16;
+        --bg-footer: #1a1612;
+        --bg-header: rgba(26, 22, 18, 0.95);
+        --bg-drawer: #1e1a16;
+        --bg-input: #1e1a16;
+        --border-stone: #383028;
+        --border-soft: #383028;
+        --border-subtle: #383028;
+        --ink-primary: #f5efe6;
+        --ink-secondary: #c2b7a8;
+        --ink-placeholder: #8b8073;
+        --danger: #f29d8b;
+        --shadow-card: 0 10px 28px rgba(0, 0, 0, 0.35);
+        --shadow-card-hover: 0 20px 40px rgba(0, 0, 0, 0.5);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 4.5rem;
+        font-family: var(--font-sans);
+        background-color: var(--bg-canvas);
+        color: var(--ink-primary);
+      }
+
+      body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background-color: var(--bg-canvas);
+        color: var(--ink-primary);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        transition: background-color 0.2s ease, color 0.2s ease;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: var(--font-serif);
+        text-wrap: balance;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      button,
+      input,
+      textarea {
+        font-family: inherit;
+      }
+
+      button:focus-visible,
+      a:focus-visible,
+      input:focus-visible,
+      textarea:focus-visible {
+        outline: 2px solid var(--ink-primary);
+        outline-offset: 2px;
+      }
+
+      /* Unified Container & Section Rhythm */
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+      }
+
+      @media (min-width: 640px) {
+        .container {
+          padding-left: 2rem;
+          padding-right: 2rem;
+        }
+      }
+
+      .section {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+      }
+
+      @media (min-width: 640px) {
+        .section {
+          padding-top: 6rem;
+          padding-bottom: 6rem;
+        }
+      }
+
+      /* Unified Section Heading */
+      .section-header {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-bottom: 2.5rem;
+      }
+
+      @media (min-width: 768px) {
+        .section-header-split {
+          flex-direction: row;
+          align-items: flex-end;
+          justify-content: space-between;
+        }
+      }
+
+      .section-kicker {
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: var(--ink-secondary);
+        margin-bottom: 0.5rem;
+      }
+
+      .section-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        line-height: 1.35;
+        color: var(--ink-primary);
+      }
+
+      @media (min-width: 640px) {
+        .section-title {
+          font-size: 1.875rem;
+        }
+      }
+
+      .section-lead {
+        font-size: 0.875rem;
+        color: var(--ink-secondary);
+        max-width: 28rem;
+      }
+
+      @media (min-width: 640px) {
+        .section-lead {
+          font-size: 0.9375rem;
+        }
+      }
+
+      /* Fixed Header */
+      .site-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 40;
+        background-color: var(--bg-header);
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        color: #ffffff;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+        transition: background-color 0.2s ease;
+      }
+
+      html.dark .site-header {
+        border-bottom-color: var(--border-stone);
+      }
+
+      .header-inner {
+        height: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+      }
+
+      .brand-logo {
+        font-family: var(--font-serif);
+        font-size: 1.125rem;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        color: #ffffff;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+
+      @media (min-width: 640px) {
+        .brand-logo {
+          font-size: 1.25rem;
+        }
+      }
+
+      .desktop-nav {
+        display: none;
+        align-items: center;
+        gap: 1.75rem;
+        font-size: 0.875rem;
+        font-weight: 500;
+      }
+
+      @media (min-width: 768px) {
+        .desktop-nav {
+          display: flex;
+        }
+      }
+
+      .desktop-nav a {
+        color: rgba(255, 255, 255, 0.95);
+        white-space: nowrap;
+        transition: color 0.15s ease;
+      }
+
+      .desktop-nav a:hover {
+        color: #ffffff;
+        text-decoration: underline;
+        text-underline-offset: 4px;
+      }
+
+      .header-actions {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        flex-shrink: 0;
+      }
+
+      .icon-pill-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.375rem;
+        min-height: 40px;
+        padding: 0.5rem 0.75rem;
+        border-radius: 0.5rem;
+        background: rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        color: #ffffff;
+        font-size: 0.75rem;
+        font-weight: 500;
+        cursor: pointer;
+        white-space: nowrap;
+        transition: background-color 0.15s ease;
+      }
+
+      .icon-pill-btn:hover {
+        background: rgba(255, 255, 255, 0.25);
+      }
+
+      .theme-label {
+        display: none;
+      }
+
+      @media (min-width: 640px) {
+        .theme-label {
+          display: inline;
+        }
+      }
+
+      .hamburger-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        border-radius: 0.5rem;
+        background: rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        color: #ffffff;
+        font-size: 1.25rem;
+        cursor: pointer;
+        transition: background-color 0.15s ease;
+      }
+
+      .hamburger-btn:hover {
+        background: rgba(255, 255, 255, 0.25);
+      }
+
+      @media (min-width: 768px) {
+        .hamburger-btn {
+          display: none;
+        }
+      }
+
+      .mobile-drawer {
+        display: none;
+        background-color: var(--bg-drawer);
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 0.75rem 1.25rem;
+      }
+
+      .mobile-drawer.open {
+        display: block;
+      }
+
+      @media (min-width: 768px) {
+        .mobile-drawer.open {
+          display: none;
+        }
+      }
+
+      .mobile-drawer nav {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+
+      .mobile-drawer a {
+        padding: 0.75rem 1rem;
+        border-radius: 0.5rem;
+        font-size: 0.9375rem;
+        font-weight: 500;
+        color: #ffffff;
+      }
+
+      .mobile-drawer a:hover {
+        background: rgba(255, 255, 255, 0.15);
+      }
+
+      /* Hero Section */
+      .hero {
+        min-height: 100vh;
+        padding: 5.5rem 0 3rem;
+        display: flex;
+        align-items: center;
+        background: linear-gradient(180deg, #ffffff 0%, #d9c9b2 14%, #8a725a 32%, #735c45 100%);
+      }
+
+      html.dark .hero {
+        background: linear-gradient(180deg, #26201a 0%, #221c16 35%, #14110e 100%);
+      }
+
+      @media (min-width: 640px) {
+        .hero {
+          padding: 7rem 0 5rem;
+        }
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        align-items: stretch;
+      }
+
+      @media (min-width: 1024px) {
+        .hero-grid {
+          grid-template-columns: repeat(12, 1fr);
+          gap: 3rem;
+        }
+      }
+
+      .hero-left {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 0.5rem 0;
+      }
+
+      @media (min-width: 1024px) {
+        .hero-left {
+          grid-column: span 6;
+        }
+        .hero-right {
+          grid-column: span 6;
+        }
+      }
+
+      .hero-industry {
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 1rem;
+      }
+
+      @media (min-width: 640px) {
+        .hero-industry {
+          font-size: 0.875rem;
+          margin-bottom: 1.5rem;
+        }
+      }
+
+      .hero-title {
+        font-size: 1.75rem;
+        font-weight: 700;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        color: #ffffff;
+        text-shadow: 0 2px 10px rgba(35, 31, 27, 0.22);
+        margin-bottom: 0.75rem;
+      }
+
+      @media (min-width: 640px) {
+        .hero-title {
+          font-size: 2.25rem;
+          margin-bottom: 1rem;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .hero-title {
+          font-size: clamp(2.75rem, 4.4vw, 4rem);
+          line-height: 1.15;
+        }
+      }
+
+      .hero-slogan {
+        font-family: var(--font-serif);
+        font-size: 1.1rem;
+        font-weight: 500;
+        line-height: 1.45;
+        color: rgba(255, 255, 255, 0.95);
+        text-shadow: 0 1px 6px rgba(35, 31, 27, 0.18);
+        margin-bottom: 1.25rem;
+      }
+
+      @media (min-width: 640px) {
+        .hero-slogan {
+          font-size: 1.5rem;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .hero-slogan {
+          font-size: clamp(1.5rem, 2.3vw, 2rem);
+        }
+      }
+
+      .hero-desc {
+        font-size: 0.875rem;
+        line-height: 1.75;
+        color: rgba(255, 255, 255, 0.9);
+        max-width: 36rem;
+      }
+
+      @media (min-width: 640px) {
+        .hero-desc {
+          font-size: 1rem;
+        }
+      }
+
+      .hero-cta-row {
+        margin-top: 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 1.25rem;
+      }
+
+      .hero-cta-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        min-height: 44px;
+        padding: 0.875rem 1.75rem;
+        border-radius: 0.75rem;
+        background-color: #ffffff;
+        color: var(--navy);
+        border: 1px solid #ffffff;
+        font-size: 0.9375rem;
+        font-weight: 600;
+        cursor: pointer;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+        transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+      }
+
+      .hero-cta-btn:hover {
+        background-color: var(--navy);
+        color: #ffffff;
+        border-color: var(--navy);
+      }
+
+      .hero-secondary-link {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+        padding: 0.5rem 0.75rem;
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: #ffffff;
+      }
+
+      .hero-secondary-link:hover {
+        text-decoration: underline;
+        text-underline-offset: 4px;
+      }
+
+      .hero-frame {
+        height: 100%;
+        background: rgba(255, 255, 255, 0.95);
+        padding: 0.75rem;
+        border-radius: 1rem;
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.16);
+      }
+
+      html.dark .hero-frame {
+        background: rgba(30, 26, 22, 0.95);
+        border-color: var(--border-stone);
+      }
+
+      /* Metrics Strip */
+      .metrics-band {
+        padding: 2.5rem 0;
+        background-color: var(--bg-canvas);
+      }
+
+      .metrics-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        background-color: var(--bg-card);
+        border: 1px solid var(--border-stone);
+        border-radius: 1rem;
+        overflow: hidden;
+      }
+
+      @media (min-width: 640px) {
+        .metrics-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .metrics-grid {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+
+      .metric-cell {
+        padding: 1.25rem 1.5rem;
+        border-bottom: 1px solid var(--border-soft);
+      }
+
+      @media (min-width: 640px) {
+        .metric-cell {
+          border-bottom: none;
+          border-right: 1px solid var(--border-soft);
+        }
+      }
+
+      .metric-cell:last-child {
+        border-bottom: none;
+        border-right: none;
+      }
+
+      .metric-label {
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: var(--ink-secondary);
+      }
+
+      .metric-value {
+        font-family: var(--font-serif);
+        font-size: 1.125rem;
+        font-weight: 600;
+        color: var(--ink-primary);
+        margin: 0.25rem 0;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .metric-note {
+        font-size: 0.75rem;
+        color: var(--ink-secondary);
+      }
+
+      /* Surface Alternation */
+      .surface-white {
+        background-color: var(--bg-card);
+        border-top: 1px solid var(--border-stone);
+        border-bottom: 1px solid var(--border-stone);
+      }
+
+      html.dark .surface-white {
+        background-color: #1c1814;
+      }
+
+      .surface-soft {
+        background-color: var(--bg-soft);
+        border-top: 1px solid var(--border-stone);
+      }
+
+      html.dark .surface-soft {
+        background-color: #1c1814;
+      }
+
+      /* About Section */
+      .about-top-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin-bottom: 3rem;
+      }
+
+      @media (min-width: 1024px) {
+        .about-top-grid {
+          grid-template-columns: repeat(12, 1fr);
+          gap: 3rem;
+        }
+        .about-left {
+          grid-column: span 4;
+        }
+        .about-mission {
+          grid-column: span 8;
+        }
+      }
+
+      .founded-row {
+        margin-top: 0.75rem;
+        padding-top: 0.75rem;
+        border-top: 1px solid var(--border-soft);
+        display: flex;
+        align-items: baseline;
+        gap: 0.75rem;
+      }
+
+      .mission-box {
+        background-color: var(--bg-soft);
+        border: 1px solid var(--border-subtle);
+        border-radius: 1rem;
+        padding: 1.5rem;
+      }
+
+      html.dark .mission-box {
+        background-color: #25201b;
+      }
+
+      @media (min-width: 640px) {
+        .mission-box {
+          padding: 2rem;
+        }
+      }
+
+      .mission-statement {
+        font-family: var(--font-serif);
+        font-size: 1.125rem;
+        font-weight: 500;
+        line-height: 1.65;
+        color: var(--ink-primary);
+        margin: 0.75rem 0;
+      }
+
+      .values-subhead {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid var(--border-soft);
+        margin-bottom: 1.5rem;
+      }
+
+      @media (min-width: 640px) {
+        .values-subhead {
+          flex-direction: row;
+          align-items: flex-end;
+          justify-content: space-between;
+        }
+      }
+
+      .grid-3 {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      @media (min-width: 768px) {
+        .grid-3 {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .grid-3 {
+          gap: 2rem;
+        }
+      }
+
+      .grid-2 {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      @media (min-width: 768px) {
+        .grid-2 {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .grid-2 {
+          gap: 2rem;
+        }
+      }
+
+      .value-card {
+        background-color: var(--bg-soft);
+        border: 1px solid var(--border-subtle);
+        border-radius: 1rem;
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+
+      html.dark .value-card {
+        background-color: #25201b;
+      }
+
+      .value-detail {
+        padding-top: 0.75rem;
+        border-top: 1px solid var(--border-subtle);
+        font-size: 0.875rem;
+        color: var(--ink-secondary);
+      }
+
+      /* Media / Image Containers */
+      .media-box {
+        overflow: hidden;
+        background-color: #e5dac8;
+        border-radius: 0.75rem;
+      }
+
+      html.dark .media-box {
+        background-color: #2a241e;
+      }
+
+      .aspect-4-3 {
+        aspect-ratio: 4 / 3;
+      }
+
+      .aspect-16-10 {
+        aspect-ratio: 16 / 10;
+      }
+
+      .aspect-1-1 {
+        aspect-ratio: 1 / 1;
+      }
+
+      .media-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.3s ease;
+      }
+
+      .media-fallback {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem;
+        text-align: center;
+        color: var(--ink-secondary);
+        font-size: 0.875rem;
+        font-weight: 500;
+      }
+
+      /* Service Cards */
+      .service-card {
+        background-color: var(--bg-card);
+        border: 1px solid var(--border-stone);
+        border-radius: 1rem;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        box-shadow: var(--shadow-card);
+        transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+      }
+
+      .service-card:hover {
+        transform: translateY(-6px);
+        box-shadow: var(--shadow-card-hover);
+      }
+
+      .service-card-img-wrap {
+        padding: 0.75rem 0.75rem 0;
+      }
+
+      .service-card-body {
+        padding: 1.5rem;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 1.5rem;
+      }
+
+      .service-head {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .emoji-box {
+        width: 2.75rem;
+        height: 2.75rem;
+        border-radius: 0.75rem;
+        background-color: var(--bg-soft);
+        border: 1px solid var(--border-subtle);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+        flex-shrink: 0;
+      }
+
+      html.dark .emoji-box {
+        background-color: #25201b;
+      }
+
+      .service-meta {
+        font-size: 0.75rem;
+        color: var(--ink-secondary);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .service-actions {
+        padding-top: 1rem;
+        border-top: 1px solid var(--border-soft);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+      }
+
+      .btn-detail {
+        flex: 1;
+        min-height: 44px;
+        padding: 0.625rem 1rem;
+        border-radius: 0.75rem;
+        background-color: var(--bg-soft);
+        border: 1px solid var(--border-stone);
+        color: var(--ink-primary);
+        font-size: 0.875rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+      }
+
+      html.dark .btn-detail {
+        background-color: #25201b;
+      }
+
+      .btn-detail:hover {
+        background-color: var(--ink-primary);
+        color: var(--bg-card);
+        border-color: var(--ink-primary);
+      }
+
+      .btn-inquire-inline {
+        min-height: 44px;
+        padding: 0.5rem;
+        background: transparent;
+        border: none;
+        color: var(--ink-secondary);
+        font-size: 0.8125rem;
+        font-weight: 600;
+        cursor: pointer;
+        white-space: nowrap;
+      }
+
+      .btn-inquire-inline:hover {
+        color: var(--ink-primary);
+        text-decoration: underline;
+        text-underline-offset: 4px;
+      }
+
+      /* Portfolio Gallery (2 columns x 3 rows) */
+      .portfolio-card {
+        width: 100%;
+        text-align: left;
+        background-color: var(--bg-soft);
+        border: 1px solid var(--border-subtle);
+        border-radius: 1rem;
+        overflow: hidden;
+        cursor: pointer;
+        box-shadow: 0 2px 8px rgba(35, 31, 27, 0.05);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      html.dark .portfolio-card {
+        background-color: #25201b;
+      }
+
+      .portfolio-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-card-hover);
+      }
+
+      .portfolio-card:hover img {
+        transform: scale(1.03);
+      }
+
+      .portfolio-body {
+        padding: 1.25rem 1.5rem;
+      }
+
+      .portfolio-meta {
+        font-size: 0.75rem;
+        color: var(--ink-secondary);
+        margin-bottom: 0.375rem;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .portfolio-summary {
+        font-size: 0.875rem;
+        color: var(--ink-secondary);
+        margin-top: 0.5rem;
+      }
+
+      /* Team Cards */
+      .team-card {
+        background-color: var(--bg-card);
+        border: 1px solid var(--border-stone);
+        border-radius: 1rem;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        box-shadow: var(--shadow-card);
+      }
+
+      .team-body {
+        padding: 1.25rem 1.5rem 1.5rem;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 0.75rem;
+      }
+
+      .team-role {
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: var(--ink-secondary);
+      }
+
+      .team-bio {
+        padding-top: 0.75rem;
+        border-top: 1px solid var(--border-soft);
+        font-size: 0.875rem;
+        color: var(--ink-secondary);
+      }
+
+      /* Contact Section */
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        align-items: stretch;
+      }
+
+      @media (min-width: 1024px) {
+        .contact-grid {
+          grid-template-columns: repeat(12, 1fr);
+          gap: 2rem;
+        }
+        .contact-info-card {
+          grid-column: span 5;
+        }
+        .contact-form-card {
+          grid-column: span 7;
+        }
+      }
+
+      .card-panel {
+        background-color: var(--bg-card);
+        border: 1px solid var(--border-stone);
+        border-radius: 1rem;
+        padding: 1.5rem;
+      }
+
+      html.dark .card-panel {
+        background-color: #25201b;
+      }
+
+      @media (min-width: 640px) {
+        .card-panel {
+          padding: 2rem;
+        }
+      }
+
+      .info-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+        margin-top: 1.5rem;
+      }
+
+      .info-item {
+        padding-bottom: 1.25rem;
+        border-bottom: 1px solid var(--border-soft);
+      }
+
+      .info-item:last-child {
+        padding-bottom: 0;
+        border-bottom: none;
+      }
+
+      .info-label {
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: var(--ink-secondary);
+        margin-bottom: 0.375rem;
+      }
+
+      .info-row {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 0.75rem;
+      }
+
+      .info-value {
+        font-size: 0.9375rem;
+        font-weight: 500;
+        color: var(--ink-primary);
+        word-break: break-word;
+      }
+
+      .copy-btn {
+        padding: 0.375rem 0.625rem;
+        border-radius: 0.375rem;
+        background-color: var(--bg-soft);
+        border: 1px solid var(--border-subtle);
+        color: var(--ink-primary);
+        font-size: 0.75rem;
+        font-weight: 500;
+        cursor: pointer;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+
+      html.dark .copy-btn {
+        background-color: #1e1a16;
+      }
+
+      .info-note {
+        margin-top: 2rem;
+        background-color: var(--bg-soft);
+        border: 1px solid var(--border-subtle);
+        border-radius: 0.75rem;
+        padding: 1rem;
+        font-size: 0.75rem;
+        color: var(--ink-secondary);
+      }
+
+      html.dark .info-note {
+        background-color: #1e1a16;
+      }
+
+      /* Form */
+      .form-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+      }
+
+      .field-label {
+        display: block;
+        font-size: 0.875rem;
+        font-weight: 500;
+        margin-bottom: 0.375rem;
+      }
+
+      .field-input,
+      .field-textarea {
+        width: 100%;
+        padding: 0.625rem 1rem;
+        border-radius: 0.5rem;
+        background-color: var(--bg-input);
+        border: 1px solid var(--border-stone);
+        color: var(--ink-primary);
+        font-size: 0.875rem;
+      }
+
+      .field-input::placeholder,
+      .field-textarea::placeholder {
+        color: var(--ink-placeholder);
+      }
+
+      .field-error {
+        margin-top: 0.375rem;
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: var(--danger);
+      }
+
+      .form-footer {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding-top: 0.5rem;
+      }
+
+      @media (min-width: 640px) {
+        .form-footer {
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+        }
+      }
+
+      .btn-navy {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        min-height: 44px;
+        padding: 0.75rem 1.75rem;
+        border-radius: 0.75rem;
+        background-color: var(--navy);
+        color: #ffffff;
+        border: none;
+        font-size: 0.875rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.15s ease;
+      }
+
+      .btn-navy:hover {
+        background-color: var(--navy-hover);
+      }
+
+      html.dark .btn-navy {
+        background-color: #f5efe6;
+        color: #14110e;
+      }
+
+      html.dark .btn-navy:hover {
+        background-color: #ffffff;
+      }
+
+      /* Footer */
+      .site-footer {
+        background-color: var(--bg-footer);
+        border-top: 1px solid var(--border-stone);
+        padding: 3rem 0;
+      }
+
+      .footer-top {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid var(--border-stone);
+      }
+
+      @media (min-width: 768px) {
+        .footer-top {
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+        }
+      }
+
+      .footer-nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: var(--ink-secondary);
+      }
+
+      .footer-nav a:hover {
+        color: var(--ink-primary);
+      }
+
+      .footer-sns {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .sns-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 0.5rem;
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 1px solid var(--border-stone);
+        color: var(--ink-primary);
+        transition: background-color 0.15s ease;
+      }
+
+      html.dark .sns-btn {
+        background-color: #25201b;
+      }
+
+      .sns-btn:hover {
+        background-color: #ffffff;
+      }
+
+      html.dark .sns-btn:hover {
+        background-color: #332c25;
+      }
+
+      .footer-bottom {
+        padding-top: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        font-size: 0.75rem;
+        color: var(--ink-secondary);
+      }
+
+      @media (min-width: 640px) {
+        .footer-bottom {
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+        }
+      }
+
+      /* Modals */
+      .modal-backdrop {
+        position: fixed;
+        inset: 0;
+        z-index: 50;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        background: rgba(20, 17, 14, 0.75);
+        backdrop-filter: blur(4px);
+      }
+
+      .modal-backdrop.open {
+        display: flex;
+      }
+
+      .modal-dialog {
+        width: 100%;
+        max-width: 48rem;
+        max-height: 90vh;
+        overflow-y: auto;
+        background-color: var(--bg-card);
+        border: 1px solid var(--border-stone);
+        border-radius: 1rem;
+        box-shadow: 0 24px 48px rgba(0, 0, 0, 0.28);
+      }
+
+      .modal-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 1.5rem;
+        border-bottom: 1px solid var(--border-soft);
+        background-color: var(--bg-soft);
+      }
+
+      html.dark .modal-header {
+        background-color: #25201b;
+      }
+
+      .modal-close {
+        width: 36px;
+        height: 36px;
+        border-radius: 0.5rem;
+        background-color: var(--bg-card);
+        border: 1px solid var(--border-stone);
+        color: var(--ink-primary);
+        font-size: 1rem;
+        cursor: pointer;
+      }
+
+      .modal-body {
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+      }
+
+      @media (min-width: 640px) {
+        .modal-body {
+          padding: 2rem;
+        }
+      }
+
+      .deliverables-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+        list-style: none;
+      }
+
+      @media (min-width: 640px) {
+        .deliverables-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      .deliverables-grid li {
+        padding: 0.625rem 0.875rem;
+        border-radius: 0.5rem;
+        background-color: var(--bg-soft);
+        border: 1px solid var(--border-subtle);
+        font-size: 0.875rem;
+      }
+
+      html.dark .deliverables-grid li {
+        background-color: #25201b;
+      }
+
+      .lightbox-nav {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+
+      /* Scroll Reveal Animation (0.5s bottom-to-top) */
+      .reveal {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+          transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        transition-delay: var(--reveal-delay, 0s);
+      }
+
+      .reveal.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        .reveal {
+          opacity: 1;
+          transform: none;
+          transition: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Fixed Top Navigation Bar -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="#hero" data-scroll="hero" class="brand-logo">안s 사진 AI 스튜디오</a>
+
+        <nav class="desktop-nav" aria-label="주요 메뉴">
+          <a href="#about" data-scroll="about">소개</a>
+          <a href="#services" data-scroll="services">서비스</a>
+          <a href="#portfolio" data-scroll="portfolio">포트폴리오</a>
+          <a href="#team" data-scroll="team">팀</a>
+          <a href="#contact" data-scroll="contact">연락처</a>
+        </nav>
+
+        <div class="header-actions">
+          <button
+            type="button"
+            id="themeToggle"
+            class="icon-pill-btn"
+            aria-label="다크 모드로 전환"
+          >
+            <span id="themeIcon" aria-hidden="true">🌙</span>
+            <span id="themeText" class="theme-label">다크</span>
+          </button>
+          <button
+            type="button"
+            id="mobileMenuBtn"
+            class="hamburger-btn"
+            aria-expanded="false"
+            aria-controls="mobileDrawer"
+            aria-label="메뉴 열기"
+          >
+            ☰
+          </button>
+        </div>
+      </div>
+
+      <div id="mobileDrawer" class="mobile-drawer">
+        <nav aria-label="모바일 메뉴">
+          <a href="#about" data-scroll="about">소개</a>
+          <a href="#services" data-scroll="services">서비스</a>
+          <a href="#portfolio" data-scroll="portfolio">포트폴리오</a>
+          <a href="#team" data-scroll="team">팀</a>
+          <a href="#contact" data-scroll="contact">연락처</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- 1. Hero Section -->
+      <section id="hero" class="hero">
+        <div class="container">
+          <div class="hero-grid">
+            <div class="hero-left">
+              <div>
+                <p class="hero-industry">출장 사진 · 인공지능 활용 지도</p>
+                <h1 class="hero-title">안s 사진 AI 스튜디오</h1>
+                <p class="hero-slogan">“당신의 공간에 혁신를 일으킵니다”</p>
+                <p class="hero-desc">
+                  공간의 고유한 빛과 맥락을 정밀하게 담아내는 출장 사진 촬영부터, 촬영 이후의
+                  홍보·콘텐츠·브랜딩 업무까지 스스로 확장할 수 있도록 돕는 실무 중심 인공지능 활용
+                  지도를 제공합니다.
+                </p>
+              </div>
+              <div class="hero-cta-row">
+                <button type="button" id="heroContactBtn" class="hero-cta-btn">
+                  <span>문의하기</span>
+                  <span aria-hidden="true">→</span>
+                </button>
+                <a href="#services" data-scroll="services" class="hero-secondary-link">
+                  주요 서비스 살펴보기
+                </a>
+              </div>
+            </div>
+
+            <div class="hero-right">
+              <div class="hero-frame">
+                <div class="media-box aspect-16-10" style="height: 100%">
+                  <img
+                    src="./src/assets/images/hero_studio_space_1794828011206.jpg"
+                    alt="안s 사진 AI 스튜디오 내부 공간"
+                    onerror="this.parentElement.innerHTML='<div class=media-fallback>안s 사진 AI 스튜디오</div>'"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Metrics Strip -->
+      <section aria-label="스튜디오 핵심 지표" class="metrics-band">
+        <div class="container reveal">
+          <div class="metrics-grid">
+            <div class="metric-cell">
+              <p class="metric-label">설립 연도</p>
+              <p class="metric-value">2022년</p>
+              <p class="metric-note">공간 기록과 AI 실무 교육 결합</p>
+            </div>
+            <div class="metric-cell">
+              <p class="metric-label">출장 촬영 범위</p>
+              <p class="metric-value">전국 방문</p>
+              <p class="metric-note">오피스 · 매장 · 건축 · 전시 공간</p>
+            </div>
+            <div class="metric-cell">
+              <p class="metric-label">인공지능 활용 지도</p>
+              <p class="metric-value">1:1 맞춤 코칭</p>
+              <p class="metric-note">이미지 보정 · 카피 · 자동화 실무</p>
+            </div>
+            <div class="metric-cell">
+              <p class="metric-label">브랜드 통합 제작</p>
+              <p class="metric-value">전략 · 로고 · 웹</p>
+              <p class="metric-note">원스톱 비주얼 시스템 구축</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. About Section -->
+      <section id="about" class="section surface-white">
+        <div class="container">
+          <div class="about-top-grid reveal">
+            <div class="about-left">
+              <p class="section-kicker">회사 소개 · About Us</p>
+              <h2 class="section-title">공간의 가치를 기록하고 AI로 확장하는 파트너</h2>
+              <div class="founded-row">
+                <span class="metric-label">설립 연도</span>
+                <strong style="font-family: var(--font-serif); font-size: 1.25rem">2022년</strong>
+              </div>
+            </div>
+
+            <div class="about-mission mission-box">
+              <p class="section-kicker">스튜디오 미션</p>
+              <p class="mission-statement">
+                현장 중심의 고품질 공간 사진 아카이브와 실무에 즉시 적용 가능한 인공지능 활용 지도를
+                결합하여, 기업과 공간이 스스로 지속 가능한 브랜드 경쟁력을 구축하도록 돕습니다.
+              </p>
+              <p style="font-size: 0.875rem; color: var(--ink-secondary)">
+                안s 사진 AI 스튜디오는 일회성 촬영에 머무르지 않습니다. 공간이 지닌 고유한 분위기를
+                정교한 이미지로 자산화를 도운 뒤, 각 기업과 운영자가 인공지능 도구를 스스로 다뤄
+                지속적인 홍보와 브랜딩을 이어갈 수 있도록 끝까지 안내합니다.
+              </p>
+            </div>
+          </div>
+
+          <div class="values-subhead reveal">
+            <h3 style="font-size: 1.375rem; font-weight: 600">핵심 가치 3가지</h3>
+            <p class="section-lead">
+              출장 사진 촬영부터 AI 실무 지도까지 스튜디오가 지키는 세 가지 기준
+            </p>
+          </div>
+
+          <div class="grid-3">
+            <article class="value-card reveal" style="--reveal-delay: 0s">
+              <div>
+                <p class="section-kicker">가치 01</p>
+                <h4 style="font-size: 1.125rem; margin-bottom: 0.5rem">현장의 진정성</h4>
+                <p style="font-size: 0.875rem; font-weight: 500">
+                  과장된 연출보다 공간 본연의 결을 기록합니다.
+                </p>
+              </div>
+              <p class="value-detail">
+                직접 현장을 방문해 시간대별 자연광과 공간 동선을 분석하고, 방문객이 실제로 체감하는
+                온도와 신뢰감을 정직한 구도로 담아냅니다.
+              </p>
+            </article>
+
+            <article class="value-card reveal" style="--reveal-delay: 0.12s">
+              <div>
+                <p class="section-kicker">가치 02</p>
+                <h4 style="font-size: 1.125rem; margin-bottom: 0.5rem">실용적 AI 혁신</h4>
+                <p style="font-size: 0.875rem; font-weight: 500">
+                  어려운 이론이 아닌 즉시 쓰는 활용법을 지도합니다.
+                </p>
+              </div>
+              <p class="value-detail">
+                촬영된 공간 사진을 바탕으로 홍보 문구 작성, SNS 시안 제작, 고객 응대 자동화까지
+                실무자가 스스로 운영할 수 있는 AI 워크플로우를 전수합니다.
+              </p>
+            </article>
+
+            <article class="value-card reveal" style="--reveal-delay: 0.24s">
+              <div>
+                <p class="section-kicker">가치 03</p>
+                <h4 style="font-size: 1.125rem; margin-bottom: 0.5rem">완결된 시각 경험</h4>
+                <p style="font-size: 0.875rem; font-weight: 500">
+                  전략부터 로고, 웹사이트까지 일관된 언어로 연결합니다.
+                </p>
+              </div>
+              <p class="value-detail">
+                분절된 외주 작업이 아닌 하나의 브랜드 전략 아래 사진, 심볼, 디지털 공간을 유기적으로
+                정렬하여 고객 접점의 완성도를 높입니다.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. Services Section -->
+      <section id="services" class="section">
+        <div class="container">
+          <div class="section-header section-header-split reveal">
+            <div>
+              <p class="section-kicker">주요 서비스 · Services</p>
+              <h2 class="section-title">공간을 브랜드로 완성하는 세 가지 핵심 역량</h2>
+            </div>
+            <p class="section-lead">
+              출장 사진과 인공지능 활용 지도를 토대로 전략, 로고, 웹사이트를 일관된 기준으로
+              구축합니다.
+            </p>
+          </div>
+
+          <div class="grid-3">
+            <!-- Card 1 -->
+            <div class="reveal" style="--reveal-delay: 0s">
+              <article class="service-card">
+                <div class="service-card-img-wrap">
+                  <div class="media-box aspect-4-3">
+                    <img
+                      src="./src/assets/images/service_brand_strategy_1794828012686.jpg"
+                      alt="브랜드 전략 작업 공간"
+                      onerror="this.parentElement.innerHTML='<div class=media-fallback>브랜드 전략</div>'"
+                    />
+                  </div>
+                </div>
+                <div class="service-card-body">
+                  <div>
+                    <div class="service-head">
+                      <span class="emoji-box" aria-hidden="true">🧭</span>
+                      <div style="min-width: 0">
+                        <p class="service-meta">포지셔닝 · 공간 컨셉 · AI 워크플로우</p>
+                        <h3 style="font-size: 1.25rem">01. 브랜드 전략</h3>
+                      </div>
+                    </div>
+                    <p style="font-size: 0.875rem; color: var(--ink-secondary)">
+                      공간의 강점과 타깃 고객을 정밀하게 분석하여 시장에서 선택받는 브랜드 핵심
+                      메시지와 콘텐츠 운영 전략을 수립합니다.
+                    </p>
+                  </div>
+                  <div class="service-actions">
+                    <button type="button" class="btn-detail" data-service-id="brand-strategy">
+                      자세히 보기
+                    </button>
+                    <button
+                      type="button"
+                      class="btn-inquire-inline"
+                      data-inquire-service="브랜드 전략"
+                    >
+                      상담 요청 →
+                    </button>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="reveal" style="--reveal-delay: 0.16s">
+              <article class="service-card">
+                <div class="service-card-img-wrap">
+                  <div class="media-box aspect-4-3">
+                    <img
+                      src="./src/assets/images/service_logo_design_1794828011143.jpg"
+                      alt="로고 디자인 결과물"
+                      onerror="this.parentElement.innerHTML='<div class=media-fallback>로고 디자인</div>'"
+                    />
+                  </div>
+                </div>
+                <div class="service-card-body">
+                  <div>
+                    <div class="service-head">
+                      <span class="emoji-box" aria-hidden="true">🎨</span>
+                      <div style="min-width: 0">
+                        <p class="service-meta">심볼 · 워드마크 · 어플리케이션 가이드</p>
+                        <h3 style="font-size: 1.25rem">02. 로고 디자인</h3>
+                      </div>
+                    </div>
+                    <p style="font-size: 0.875rem; color: var(--ink-secondary)">
+                      공간의 건축적 비례와 브랜드 철학을 직관적인 조형으로 압축하여, 온·오프라인
+                      어디서나 선명한 인상을 남기는 로고를 제작합니다.
+                    </p>
+                  </div>
+                  <div class="service-actions">
+                    <button type="button" class="btn-detail" data-service-id="logo-design">
+                      자세히 보기
+                    </button>
+                    <button
+                      type="button"
+                      class="btn-inquire-inline"
+                      data-inquire-service="로고 디자인"
+                    >
+                      상담 요청 →
+                    </button>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="reveal" style="--reveal-delay: 0.32s">
+              <article class="service-card">
+                <div class="service-card-img-wrap">
+                  <div class="media-box aspect-4-3">
+                    <img
+                      src="./src/assets/images/service_web_production_1794828011101.jpg"
+                      alt="웹사이트 제작 화면"
+                      onerror="this.parentElement.innerHTML='<div class=media-fallback>웹사이트 제작</div>'"
+                    />
+                  </div>
+                </div>
+                <div class="service-card-body">
+                  <div>
+                    <div class="service-head">
+                      <span class="emoji-box" aria-hidden="true">💻</span>
+                      <div style="min-width: 0">
+                        <p class="service-meta">기업 홈페이지 · 반응형 UI · 문의 시스템</p>
+                        <h3 style="font-size: 1.25rem">03. 웹사이트 제작</h3>
+                      </div>
+                    </div>
+                    <p style="font-size: 0.875rem; color: var(--ink-secondary)">
+                      스튜디오에서 직접 촬영한 공간 사진과 정제된 인터페이스를 결합하여, 방문객의
+                      신뢰와 문의를 이끌어내는 기업 웹사이트를 구축합니다.
+                    </p>
+                  </div>
+                  <div class="service-actions">
+                    <button type="button" class="btn-detail" data-service-id="web-production">
+                      자세히 보기
+                    </button>
+                    <button
+                      type="button"
+                      class="btn-inquire-inline"
+                      data-inquire-service="웹사이트 제작"
+                    >
+                      상담 요청 →
+                    </button>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Portfolio Gallery Section (2x3 Grid + Modal) -->
+      <section id="portfolio" class="section surface-white">
+        <div class="container">
+          <div class="section-header section-header-split reveal">
+            <div>
+              <p class="section-kicker">포트폴리오 갤러리 · Portfolio</p>
+              <h2 class="section-title">현장에서 기록한 공간과 브랜드 작업물</h2>
+            </div>
+            <p class="section-lead">
+              이미지를 클릭하시면 고해상도 상세 화면과 프로젝트 설명을 크게 보실 수 있습니다.
+            </p>
+          </div>
+
+          <div id="portfolioGrid" class="grid-2"></div>
+        </div>
+      </section>
+
+      <!-- 5. Team Section -->
+      <section id="team" class="section">
+        <div class="container">
+          <div class="section-header section-header-split reveal">
+            <div>
+              <p class="section-kicker">팀 소개 · Our Team</p>
+              <h2 class="section-title">공간의 혁신을 함께 만드는 전문가들</h2>
+            </div>
+            <p class="section-lead">
+              사진 촬영, 인공지능 실무 교육, 브랜드 디자인 전문가가 한 팀으로 호흡합니다.
+            </p>
+          </div>
+
+          <div class="grid-3">
+            <article class="team-card reveal" style="--reveal-delay: 0s">
+              <div style="padding: 0.75rem 0.75rem 0">
+                <div class="media-box aspect-1-1">
+                  <img
+                    src="./src/assets/images/team_ahn_director_1794905828908.jpg"
+                    alt="안서준 대표 디렉터"
+                    onerror="this.parentElement.innerHTML='<div class=media-fallback>안서준</div>'"
+                  />
+                </div>
+              </div>
+              <div class="team-body">
+                <div>
+                  <p class="team-role">대표 디렉터 · 수석 출장 포토그래퍼</p>
+                  <h3 style="font-size: 1.25rem; margin-top: 0.25rem">안서준</h3>
+                </div>
+                <p class="team-bio">
+                  건축과 공간의 고유한 빛을 읽고, 10년 이상의 현장 경험을 바탕으로 브랜드의
+                  첫인상을 기록합니다.
+                </p>
+              </div>
+            </article>
+
+            <article class="team-card reveal" style="--reveal-delay: 0.14s">
+              <div style="padding: 0.75rem 0.75rem 0">
+                <div class="media-box aspect-1-1">
+                  <img
+                    src="./src/assets/images/team_kim_strategist_1794905829427.jpg"
+                    alt="김유진 AI 활용 교육 총괄"
+                    onerror="this.parentElement.innerHTML='<div class=media-fallback>김유진</div>'"
+                  />
+                </div>
+              </div>
+              <div class="team-body">
+                <div>
+                  <p class="team-role">AI 활용 교육 총괄 · 브랜드 전략가</p>
+                  <h3 style="font-size: 1.25rem; margin-top: 0.25rem">김유진</h3>
+                </div>
+                <p class="team-bio">
+                  촬영된 시각 자산을 기업 실무와 홍보 자동화로 연결하는 맞춤형 인공지능 워크플로우를
+                  설계하고 지도합니다.
+                </p>
+              </div>
+            </article>
+
+            <article class="team-card reveal" style="--reveal-delay: 0.28s">
+              <div style="padding: 0.75rem 0.75rem 0">
+                <div class="media-box aspect-1-1">
+                  <img
+                    src="./src/assets/images/team_park_designer_1794905830201.jpg"
+                    alt="박도현 수석 브랜드 및 웹 디자이너"
+                    onerror="this.parentElement.innerHTML='<div class=media-fallback>박도현</div>'"
+                  />
+                </div>
+              </div>
+              <div class="team-body">
+                <div>
+                  <p class="team-role">수석 브랜드 &amp; 웹 디자이너</p>
+                  <h3 style="font-size: 1.25rem; margin-top: 0.25rem">박도현</h3>
+                </div>
+                <p class="team-bio">
+                  로고의 조형적 균형부터 반응형 웹사이트의 사용자 동선까지 완결된 디지털 브랜드
+                  경험을 구현합니다.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. Contact Section -->
+      <section id="contact" class="section surface-soft">
+        <div class="container">
+          <div class="section-header reveal">
+            <div>
+              <p class="section-kicker">연락처 및 상담 · Contact</p>
+              <h2 class="section-title">프로젝트와 출장 촬영 문의를 남겨주세요</h2>
+            </div>
+            <p class="section-lead">
+              공간 촬영, 인공지능 활용 교육, 브랜드 전략 및 웹사이트 제작에 관한 문의를 남기시면
+              영업일 기준 1일 이내에 담당 디렉터가 직접 회신드립니다.
+            </p>
+          </div>
+
+          <div class="contact-grid">
+            <div class="card-panel contact-info-card reveal">
+              <h3 style="font-size: 1.25rem">회사 정보</h3>
+              <dl class="info-list">
+                <div class="info-item">
+                  <dt class="info-label">📍 주소</dt>
+                  <dd class="info-row">
+                    <span class="info-value">서울특별시 마포구 연남로 42, 3층 안s 사진 AI 스튜디오</span>
+                    <button
+                      type="button"
+                      class="copy-btn"
+                      data-copy="서울특별시 마포구 연남로 42, 3층 안s 사진 AI 스튜디오"
+                    >
+                      복사
+                    </button>
+                  </dd>
+                </div>
+                <div class="info-item">
+                  <dt class="info-label">✉️ 이메일</dt>
+                  <dd class="info-row">
+                    <a href="mailto:contact@ansphoto-ai.kr" class="info-value">
+                      contact@ansphoto-ai.kr
+                    </a>
+                    <button type="button" class="copy-btn" data-copy="contact@ansphoto-ai.kr">
+                      복사
+                    </button>
+                  </dd>
+                </div>
+                <div class="info-item">
+                  <dt class="info-label">📞 전화번호</dt>
+                  <dd>
+                    <a href="tel:02-338-2026" class="info-value" style="font-weight: 600">
+                      02-338-2026
+                    </a>
+                  </dd>
+                </div>
+              </dl>
+              <div class="info-note">
+                수도권 및 전국 출장 촬영 일정 조율을 위해 방문 희망 지역과 공간 규모를 함께 적어
+                주시면 더욱 신속하게 안내해 드립니다.
+              </div>
+            </div>
+
+            <div class="card-panel contact-form-card reveal" style="--reveal-delay: 0.12s">
+              <form id="inquiryForm" class="form-stack" novalidate>
+                <div>
+                  <h3 style="font-size: 1.25rem">문의 양식</h3>
+                  <p style="font-size: 0.75rem; color: var(--ink-secondary); margin-top: 0.25rem">
+                    아래 항목을 입력하신 뒤 보내기 버튼을 눌러주세요.
+                  </p>
+                </div>
+
+                <div>
+                  <label for="inquiry-name" class="field-label">이름 *</label>
+                  <input
+                    id="inquiry-name"
+                    type="text"
+                    class="field-input"
+                    placeholder="이름을 입력하세요."
+                    required
+                  />
+                  <p id="error-name" class="field-error" hidden></p>
+                </div>
+
+                <div>
+                  <label for="inquiry-email" class="field-label">이메일 *</label>
+                  <input
+                    id="inquiry-email"
+                    type="email"
+                    class="field-input"
+                    placeholder="이메일을 입력하세요."
+                    required
+                  />
+                  <p id="error-email" class="field-error" hidden></p>
+                </div>
+
+                <div>
+                  <label for="inquiry-message" class="field-label">메시지 *</label>
+                  <textarea
+                    id="inquiry-message"
+                    rows="5"
+                    class="field-textarea"
+                    placeholder="메시지를 입력하세요."
+                    required
+                  ></textarea>
+                  <p id="error-message" class="field-error" hidden></p>
+                </div>
+
+                <div class="form-footer">
+                  <p style="font-size: 0.75rem; color: var(--ink-secondary)">
+                    입력하신 정보는 상담 회신 목적 외에는 사용되지 않습니다.
+                  </p>
+                  <button type="submit" class="btn-navy">보내기 →</button>
+                </div>
+              </form>
+
+              <div id="inquirySuccess" hidden>
+                <p class="section-kicker">문의 접수 완료</p>
+                <h3 style="font-size: 1.5rem; margin: 0.5rem 0">문의가 정상적으로 접수되었습니다</h3>
+                <p
+                  id="successDesc"
+                  style="font-size: 0.875rem; color: var(--ink-secondary); margin-bottom: 1.5rem"
+                ></p>
+                <button type="button" id="resetFormBtn" class="btn-navy">새 문의 작성하기</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 7. Footer -->
+    <footer class="site-footer">
+      <div class="container reveal">
+        <div class="footer-top">
+          <div>
+            <p style="font-family: var(--font-serif); font-weight: 700">안s 사진 AI 스튜디오</p>
+            <p style="font-size: 0.75rem; color: var(--ink-secondary); margin-top: 0.25rem">
+              출장 사진 · 인공지능 활용 지도 · 2022년 설립
+            </p>
+          </div>
+
+          <nav class="footer-nav" aria-label="푸터 메뉴">
+            <a href="#about" data-scroll="about">소개</a>
+            <a href="#services" data-scroll="services">서비스</a>
+            <a href="#portfolio" data-scroll="portfolio">포트폴리오</a>
+            <a href="#team" data-scroll="team">팀</a>
+            <a href="#contact" data-scroll="contact">연락처</a>
+          </nav>
+
+          <div class="footer-sns">
+            <a
+              href="mailto:contact@ansphoto-ai.kr"
+              style="font-size: 0.75rem; font-weight: 500; margin-right: 0.5rem"
+            >
+              contact@ansphoto-ai.kr
+            </a>
+            <a
+              href="https://www.instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="sns-btn"
+              aria-label="인스타그램"
+              title="인스타그램"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+              </svg>
+            </a>
+            <a
+              href="https://www.youtube.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="sns-btn"
+              aria-label="유튜브"
+              title="유튜브"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path>
+                <path d="m10 15 5-3-5-3v6Z"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2026 안s 사진 AI 스튜디오. All rights reserved.</p>
+          <p>서울특별시 마포구 연남로 42, 3층 안s 사진 AI 스튜디오</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Service Detail Modal -->
+    <div id="serviceModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="svcModalTitle">
+      <div class="modal-dialog">
+        <div class="modal-header">
+          <p id="svcModalMeta" class="section-kicker" style="margin: 0"></p>
+          <button type="button" id="svcModalClose" class="modal-close" aria-label="닫기">✕</button>
+        </div>
+        <div class="modal-body">
+          <div class="media-box aspect-16-10">
+            <img id="svcModalImg" src="" alt="" />
+          </div>
+          <div>
+            <h3 id="svcModalTitle" style="font-size: 1.5rem"></h3>
+            <p id="svcModalDesc" style="font-size: 0.9375rem; color: var(--ink-secondary); margin-top: 0.5rem"></p>
+          </div>
+          <div>
+            <p style="font-size: 0.875rem; font-weight: 600; margin-bottom: 0.75rem">
+              주요 제공 산출물 · <span id="svcModalTimeline" style="color: var(--ink-secondary)"></span>
+            </p>
+            <ul id="svcModalList" class="deliverables-grid"></ul>
+          </div>
+          <div style="display: flex; justify-content: flex-end">
+            <button type="button" id="svcModalInquire" class="btn-navy">이 서비스 문의하기 →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Portfolio Lightbox Modal -->
+    <div id="portfolioModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="pfModalTitle">
+      <div class="modal-dialog">
+        <div class="modal-header">
+          <p id="pfModalMeta" class="section-kicker" style="margin: 0"></p>
+          <button type="button" id="pfModalClose" class="modal-close" aria-label="닫기">✕</button>
+        </div>
+        <div class="modal-body">
+          <div class="media-box aspect-16-10">
+            <img id="pfModalImg" src="" alt="" />
+          </div>
+          <div>
+            <h3 id="pfModalTitle" style="font-size: 1.5rem"></h3>
+            <p id="pfModalSummary" style="font-size: 0.9375rem; color: var(--ink-secondary); margin-top: 0.5rem"></p>
+          </div>
+          <div class="lightbox-nav">
+            <button type="button" id="pfPrevBtn" class="btn-detail">← 이전 작품</button>
+            <button type="button" id="pfNextBtn" class="btn-detail">다음 작품 →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        const SERVICES = {
+          'brand-strategy': {
+            title: '01. 브랜드 전략',
+            meta: '01. 서비스 상세 안내 · 포지셔닝 · 공간 컨셉 · AI 워크플로우',
+            image: './src/assets/images/service_brand_strategy_1794828012686.jpg',
+            desc: '출장 촬영 이전 단계부터 공간과 비즈니스의 정체성을 진단합니다. 현장 사진 아카이브와 생성형 인공지능 활용 가이드를 하나의 전략 문서로 통합해 일관된 브랜드 운영 기준을 마련합니다.',
+            timeline: '약 2 ~ 3주 소요',
+            option: '브랜드 전략',
+            deliverables: [
+              '경쟁 환경 및 공간 정체성 진단 리포트',
+              '핵심 슬로건 및 브랜드 보이스 가이드라인',
+              '출장 사진 연동 비주얼 디렉팅 시트',
+              '실무자 맞춤형 AI 콘텐츠 운영 매뉴얼',
+            ],
+          },
+          'logo-design': {
+            title: '02. 로고 디자인',
+            meta: '02. 서비스 상세 안내 · 심볼 · 워드마크 · 어플리케이션 가이드',
+            image: './src/assets/images/service_logo_design_1794828011143.jpg',
+            desc: '단순한 그래픽 도안을 넘어 간판, 명함, 패키지, 디지털 파비콘까지 실제 공간과 매체에서 완벽하게 작동하는 시각 정체성을 설계합니다.',
+            timeline: '약 2 ~ 4주 소요',
+            option: '로고 디자인',
+            deliverables: [
+              '심볼 마크 및 국·영문 워드마크 3안 제안',
+              '최종 확정 로고 원본 벡터 패키지 (AI / SVG / PNG)',
+              '전용 컬러 팔레트 및 서체 규정집',
+              '명함 · 사이니지 · 서류 봉투 목업 시안',
+            ],
+          },
+          'web-production': {
+            title: '03. 웹사이트 제작',
+            meta: '03. 서비스 상세 안내 · 기업 홈페이지 · 반응형 UI · 문의 시스템',
+            image: './src/assets/images/service_web_production_1794828011101.jpg',
+            desc: '모바일과 데스크톱 모든 화면에서 빠르고 쾌적하게 동작하는 반응형 웹사이트를 설계·개발하며 SEO 기본 구조와 상담 문의 시스템을 함께 구축합니다.',
+            timeline: '약 3 ~ 5주 소요',
+            option: '웹사이트 제작',
+            deliverables: [
+              '반응형 기업 홈페이지 기획 및 UI/UX 디자인',
+              '출장 사진 기반 웹 최적화 고해상도 에셋 적용',
+              '상담 문의 · 예약 접수 인터페이스 구축',
+              '기본 SEO 메타태그 및 도메인 연결 지원',
+            ],
+          },
+        };
+
+        const PORTFOLIO = [
+          {
+            title: '서촌 온담 한옥 카페 공간 기록',
+            category: '출장 사진',
+            client: '온담 커피 로스터스',
+            year: '2026',
+            summary: '한옥 서까래와 트래버틴 바가 어우러진 자연광 동선을 촬영하고, SNS 홍보용 AI 보정 프리셋을 구축했습니다.',
+            image: './src/assets/images/portfolio_hanok_cafe_1794905826544.jpg',
+          },
+          {
+            title: '청담 보타닉 스킨케어 쇼룸',
+            category: '출장 사진 · 브랜드 전략',
+            client: '라온 보타닉스',
+            year: '2026',
+            summary: '석재 디스플레이 오브제와 공간의 여백을 정갈한 구도로 담아내어 브랜드 룩북 아카이브를 완성했습니다.',
+            image: './src/assets/images/portfolio_flagship_showroom_1794905826720.jpg',
+          },
+          {
+            title: '성수 건축·디자인 아틀리에 오피스',
+            category: '출장 사진',
+            client: '모노리스 건축사사무소',
+            year: '2025',
+            summary: '대형 원목 테이블과 리넨 커튼을 투과하는 오후 빛을 기록해 채용 브랜딩 및 기업 웹사이트에 활용했습니다.',
+            image: './src/assets/images/portfolio_office_atelier_1794905826633.jpg',
+          },
+          {
+            title: '아우렐리아 브랜드 아이덴티티 패키지',
+            category: '로고 디자인',
+            client: '아우렐리아 리빙',
+            year: '2025',
+            summary: '양각 명함, 리넨 커버 룩북, 전용 서체 시스템을 통합 설계하여 실물과 인쇄 매체 전반의 품격을 높였습니다.',
+            image: './src/assets/images/portfolio_brand_identity_set_1794905827158.jpg',
+          },
+          {
+            title: '기업 실무진 인공지능 활용 워크숍',
+            category: '인공지능 활용 지도',
+            client: '연남 로컬 크리에이티브 연합',
+            year: '2026',
+            summary: '현장 촬영 사진의 톤 보정부터 AI 카피라이팅·상세페이지 초안 자동화까지 1:1 맞춤형 지도를 진행했습니다.',
+            image: './src/assets/images/portfolio_ai_workshop_1794905827936.jpg',
+          },
+          {
+            title: '아우라 스튜디오 반응형 웹사이트',
+            category: '웹사이트 제작',
+            client: '아우라 아키텍처',
+            year: '2025',
+            summary: '직접 촬영한 공간 아카이브를 온화한 베이지 그리드로 구성하고 통합 문의 시스템을 구축했습니다.',
+            image: './src/assets/images/portfolio_web_showcase_1794905828338.jpg',
+          },
+        ];
+
+        // 1. Dark Mode Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const themeText = document.getElementById('themeText');
+        function applyTheme(dark) {
+          document.documentElement.classList.toggle('dark', dark);
+          themeIcon.textContent = dark ? '☀️' : '🌙';
+          themeText.textContent = dark ? '라이트' : '다크';
+          themeToggle.setAttribute('aria-label', dark ? '라이트 모드로 전환' : '다크 모드로 전환');
+          try {
+            localStorage.setItem('ans-theme', dark ? 'dark' : 'light');
+          } catch {}
+        }
+        applyTheme(localStorage.getItem('ans-theme') === 'dark');
+        themeToggle.addEventListener('click', () => {
+          applyTheme(!document.documentElement.classList.contains('dark'));
+        });
+
+        // 2. Mobile Hamburger Menu
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileDrawer = document.getElementById('mobileDrawer');
+        function setDrawer(open) {
+          mobileDrawer.classList.toggle('open', open);
+          mobileMenuBtn.setAttribute('aria-expanded', String(open));
+          mobileMenuBtn.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
+          mobileMenuBtn.textContent = open ? '✕' : '☰';
+        }
+        mobileMenuBtn.addEventListener('click', () => {
+          setDrawer(!mobileDrawer.classList.contains('open'));
+        });
+        window.addEventListener('resize', () => {
+          if (window.innerWidth >= 768) setDrawer(false);
+        });
+
+        // 3. Smooth Scroll Navigation
+        function scrollToSection(id, prefillService) {
+          setDrawer(false);
+          const el = document.getElementById(id);
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+          if (prefillService) {
+            const msgInput = document.getElementById('inquiry-message');
+            const form = document.getElementById('inquiryForm');
+            const success = document.getElementById('inquirySuccess');
+            form.hidden = false;
+            success.hidden = true;
+            msgInput.value = `[${prefillService} 문의] `;
+            setTimeout(() => document.getElementById('inquiry-name').focus(), 350);
+          }
+        }
+        document.querySelectorAll('a[data-scroll]').forEach((link) => {
+          link.addEventListener('click', (e) => {
+            e.preventDefault();
+            scrollToSection(link.getAttribute('data-scroll'));
+          });
+        });
+        document.getElementById('heroContactBtn').addEventListener('click', () => {
+          scrollToSection('contact');
+          setTimeout(() => document.getElementById('inquiry-name').focus(), 350);
+        });
+
+        // 4. Scroll Reveal (0.5s bottom-to-top)
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.12 }
+        );
+        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+        // 5. Service Modal & Inquiry Links
+        const serviceModal = document.getElementById('serviceModal');
+        let currentServiceOption = '';
+        document.querySelectorAll('[data-service-id]').forEach((btn) => {
+          btn.addEventListener('click', () => {
+            const svc = SERVICES[btn.getAttribute('data-service-id')];
+            if (!svc) return;
+            currentServiceOption = svc.option;
+            document.getElementById('svcModalMeta').textContent = svc.meta;
+            document.getElementById('svcModalTitle').textContent = svc.title;
+            document.getElementById('svcModalDesc').textContent = svc.desc;
+            document.getElementById('svcModalTimeline').textContent = svc.timeline;
+            const img = document.getElementById('svcModalImg');
+            img.src = svc.image;
+            img.alt = svc.title;
+            document.getElementById('svcModalList').innerHTML = svc.deliverables
+              .map((item) => `<li>✓ ${item}</li>`)
+              .join('');
+            serviceModal.classList.add('open');
+          });
+        });
+        document.getElementById('svcModalClose').addEventListener('click', () => {
+          serviceModal.classList.remove('open');
+        });
+        serviceModal.addEventListener('click', (e) => {
+          if (e.target === serviceModal) serviceModal.classList.remove('open');
+        });
+        document.getElementById('svcModalInquire').addEventListener('click', () => {
+          serviceModal.classList.remove('open');
+          scrollToSection('contact', currentServiceOption);
+        });
+        document.querySelectorAll('[data-inquire-service]').forEach((btn) => {
+          btn.addEventListener('click', () => {
+            scrollToSection('contact', btn.getAttribute('data-inquire-service'));
+          });
+        });
+
+        // 6. Portfolio 2x3 Grid & Lightbox Modal
+        const portfolioGrid = document.getElementById('portfolioGrid');
+        const portfolioModal = document.getElementById('portfolioModal');
+        let activePortfolioIdx = 0;
+
+        portfolioGrid.innerHTML = PORTFOLIO.map(
+          (item, idx) => `
+            <div class="reveal" style="--reveal-delay: ${(idx % 2) * 0.14}s">
+              <button type="button" class="portfolio-card" data-pf-idx="${idx}">
+                <div style="padding: 0.75rem 0.75rem 0">
+                  <div class="media-box aspect-4-3">
+                    <img src="${item.image}" alt="${item.title}" onerror="this.parentElement.innerHTML='<div class=media-fallback>${item.title}</div>'" />
+                  </div>
+                </div>
+                <div class="portfolio-body">
+                  <p class="portfolio-meta">${item.category} · ${item.client} · ${item.year}</p>
+                  <h3 style="font-size: 1.125rem">${item.title}</h3>
+                  <p class="portfolio-summary">${item.summary}</p>
+                </div>
+              </button>
+            </div>
+          `
+        ).join('');
+        portfolioGrid.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+        function openPortfolio(idx) {
+          activePortfolioIdx = (idx + PORTFOLIO.length) % PORTFOLIO.length;
+          const item = PORTFOLIO[activePortfolioIdx];
+          document.getElementById('pfModalMeta').textContent =
+            `${item.category} · ${item.client} · ${item.year} (${activePortfolioIdx + 1} / ${PORTFOLIO.length})`;
+          document.getElementById('pfModalTitle').textContent = item.title;
+          document.getElementById('pfModalSummary').textContent = item.summary;
+          const img = document.getElementById('pfModalImg');
+          img.src = item.image;
+          img.alt = item.title;
+          portfolioModal.classList.add('open');
+        }
+        portfolioGrid.addEventListener('click', (e) => {
+          const card = e.target.closest('[data-pf-idx]');
+          if (card) openPortfolio(Number(card.getAttribute('data-pf-idx')));
+        });
+        document.getElementById('pfPrevBtn').addEventListener('click', () => openPortfolio(activePortfolioIdx - 1));
+        document.getElementById('pfNextBtn').addEventListener('click', () => openPortfolio(activePortfolioIdx + 1));
+        document.getElementById('pfModalClose').addEventListener('click', () => portfolioModal.classList.remove('open'));
+        portfolioModal.addEventListener('click', (e) => {
+          if (e.target === portfolioModal) portfolioModal.classList.remove('open');
+        });
+
+        window.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') {
+            setDrawer(false);
+            serviceModal.classList.remove('open');
+            portfolioModal.classList.remove('open');
+          } else if (portfolioModal.classList.contains('open')) {
+            if (e.key === 'ArrowLeft') openPortfolio(activePortfolioIdx - 1);
+            if (e.key === 'ArrowRight') openPortfolio(activePortfolioIdx + 1);
+          }
+        });
+
+        // 7. Copy Buttons & Inquiry Form Validation
+        document.querySelectorAll('.copy-btn').forEach((btn) => {
+          btn.addEventListener('click', async () => {
+            try {
+              await navigator.clipboard.writeText(btn.getAttribute('data-copy'));
+              btn.textContent = '복사됨 ✓';
+              setTimeout(() => (btn.textContent = '복사'), 2000);
+            } catch {}
+          });
+        });
+
+        const inquiryForm = document.getElementById('inquiryForm');
+        const inquirySuccess = document.getElementById('inquirySuccess');
+        inquiryForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const name = document.getElementById('inquiry-name').value.trim();
+          const email = document.getElementById('inquiry-email').value.trim();
+          const message = document.getElementById('inquiry-message').value.trim();
+          const errName = document.getElementById('error-name');
+          const errEmail = document.getElementById('error-email');
+          const errMessage = document.getElementById('error-message');
+
+          errName.hidden = name.length >= 2;
+          errName.textContent = '이름을 2자 이상 입력해 주세요.';
+          const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+          errEmail.hidden = emailValid;
+          errEmail.textContent = '올바른 이메일 주소를 입력해 주세요.';
+          errMessage.hidden = message.length >= 5;
+          errMessage.textContent = '메시지를 5자 이상 입력해 주세요.';
+
+          if (name.length < 2 || !emailValid || message.length < 5) return;
+
+          document.getElementById('successDesc').textContent =
+            `${name}님의 상담 요청을 확인했습니다. 담당자가 검토 후 기재해 주신 이메일(${email})로 빠르게 연락드리겠습니다.`;
+          inquiryForm.reset();
+          inquiryForm.hidden = true;
+          inquirySuccess.hidden = false;
+        });
+
+        document.getElementById('resetFormBtn').addEventListener('click', () => {
+          inquirySuccess.hidden = true;
+          inquiryForm.hidden = false;
+        });
+      })();
+    </script>
+  </body>
+</html>
